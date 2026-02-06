@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GM Promoters - Professional Land Promotion Company Database Management System">
+    <title>GM Promoters - Land Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Using system fonts for natural look -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="login-page" class="auth-page">
+            <div class="auth-container">
+                <div class="auth-card glass-card">
+                    <div class="auth-header">
+                        <div class="logo">
+                            <span>GM Promoters</span>
+                        </div>
+                        <h1>Welcome Back</h1>
+                        <p>Sign in to manage your land portfolio</p>
+                    </div>
+
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="login-username">Username</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="login-username" name="username" placeholder="Enter username"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" name="password" placeholder="Enter password"
+                                    required>
+                                <button type="button" class="toggle-password"
+                                    onclick="togglePassword('login-password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Sign In</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+                    </div>
+                </div>
+
+                <div class="auth-decoration">
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Page -->
+        <div id="signup-page" class="auth-page hidden">
+            <div class="auth-container">
+                <div class="auth-card glass-card">
+                    <div class="auth-header">
+                        <div class="logo">
+                            <span>GM Promoters</span>
+                        </div>
+                        <h1>Create Account</h1>
+                        <p>Join our land management platform</p>
+                    </div>
+
+                    <form id="signup-form" class="auth-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="signup-fullname">Full Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="signup-fullname" name="fullName" placeholder="John Doe"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="signup-username">Username</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-at"></i>
+                                    <input type="text" id="signup-username" name="username" placeholder="johndoe"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="signup-email" name="email" placeholder="john@example.com"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="signup-password" name="password"
+                                    placeholder="Min 6 characters" required minlength="6">
+                                <button type="button" class="toggle-password"
+                                    onclick="togglePassword('signup-password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Create Account</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="#" onclick="showLogin()">Sign in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="dashboard hidden">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <span>GM Promoters</span>
+                    </div>
+                    <button class="sidebar-toggle" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="nav-item active" data-page="overview">
+                            <a href="#"><i class="fas fa-chart-pie"></i><span>Dashboard</span></a>
+                        </li>
+                        <li class="nav-item" data-page="lands">
+                            <a href="#"><i class="fas fa-map-marked-alt"></i><span>Lands</span></a>
+                        </li>
+                        <li class="nav-item" data-page="customers">
+                            <a href="#"><i class="fas fa-users"></i><span>Customers</span></a>
+                        </li>
+                        <li class="nav-item" data-page="agents">
+                            <a href="#"><i class="fas fa-user-tie"></i><span>Agents</span></a>
+                        </li>
+                        <li class="nav-item" data-page="transactions">
+                            <a href="#"><i class="fas fa-exchange-alt"></i><span>Transactions</span></a>
+                        </li>
+                        <li class="nav-item" data-page="reports">
+                            <a href="#"><i class="fas fa-chart-bar"></i><span>Reports</span></a>
+                        </li>
+                        <li class="nav-item admin-only" data-page="users">
+                            <a href="#"><i class="fas fa-user-cog"></i><span>Users</span></a>
+                        </li>
+                        <li class="nav-item admin-only" data-page="activity">
+                            <a href="#"><i class="fas fa-history"></i><span>Activity Log</span></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-details">
+                            <span class="user-name" id="sidebar-username">User</span>
+                            <span class="user-role" id="sidebar-role">Role</span>
+                        </div>
+                    </div>
+                    <button class="btn-logout" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Header -->
+                <header class="main-header">
+                    <div class="header-left">
+                        <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="global-search" placeholder="Search lands, customers, agents...">
+                            <div class="search-results" id="search-results"></div>
+                        </div>
+                    </div>
+
+                    <div class="header-right">
+                        <button class="header-btn" onclick="refreshData()">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <div class="user-dropdown">
+                            <button class="header-btn user-btn" onclick="toggleUserMenu()">
+                                <i class="fas fa-user-circle"></i>
+                                <span id="header-username">User</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu" id="user-menu">
+                                <a href="#" onclick="showChangePassword()"><i class="fas fa-key"></i> Change
+                                    Password</a>
+                                <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Page Content Container -->
+                <div class="page-container" id="page-container">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal Container -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Modal Title</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be injected -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Confirm Dialog -->
+    <div class="confirm-overlay hidden" id="confirm-overlay">
+        <div class="confirm-dialog glass-card">
+            <div class="confirm-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3 id="confirm-title">Confirm Action</h3>
+            <p id="confirm-message">Are you sure you want to proceed?</p>
+            <div class="confirm-actions">
+                <button class="btn btn-secondary" onclick="cancelConfirm()">Cancel</button>
+                <button class="btn btn-danger" id="confirm-btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+    <script src="js/pages/lands.js"></script>
+    <script src="js/pages/customers.js"></script>
+    <script src="js/pages/agents.js"></script>
+    <script src="js/pages/transactions.js"></script>
+    <script src="js/pages/reports.js"></script>
+    <script src="js/pages/users.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
