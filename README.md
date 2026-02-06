@@ -5,48 +5,48 @@ A comprehensive Land Promotion Company Database Management System built with Nod
 <img width="1140" height="714" alt="image" src="https://github.com/user-attachments/assets/6b7ade7e-0bd2-459a-9c4a-c65b2fe9e87e" />
 
 
-## ✨ Features
+## Features
 
-### 🔐 Authentication & Authorization
+### Authentication & Authorization
 - User login and registration
 - Password hashing with bcrypt
 - Session-based authentication
 - Role-based access control (Admin / Agent / Staff)
 
-### 🏞️ Land Management
+### Land Management
 - Add, edit, delete land records
 - Track land status (Available / Reserved / Sold)
 - Assign agents to lands
 - Document uploads
 - Search and filter by location, price, status, type
 
-### 👥 Customer Management
+### Customer Management
 - Complete customer profiles
 - ID proof documentation
 - Purchase history tracking
 - Link customers to purchased lands
 
-### 👔 Agent Management
+### Agent Management
 - Agent profiles with commission rates
 - Track assigned lands and sales
 - Commission calculator
 - Performance metrics
 
-### 💰 Transactions
+### Transactions
 - Record purchase transactions
 - Multiple payment methods (Cash, Cheque, Bank Transfer, UPI)
 - Installment tracking
 - Receipt generation
 - Commission tracking
 
-### 📊 Reports & Analytics
+### Reports & Analytics
 - Dashboard with key metrics
 - Monthly sales charts
 - Top performing agents
 - Land status distribution
 - Revenue summaries
 
-### 🔍 Additional Features
+### Additional Features
 - Global search across all entities
 - CSV export functionality
 - Activity logging / Audit trail
@@ -54,7 +54,7 @@ A comprehensive Land Promotion Company Database Management System built with Nod
 - Toast notifications
 - Confirmation dialogs
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
 - **Backend:** Node.js, Express.js
@@ -115,7 +115,7 @@ GMpromoters/
 └── README.md
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -158,7 +158,7 @@ GMpromoters/
    http://localhost:3000
    ```
 
-## 🔑 Default Login Credentials
+## Default Login Credentials
 
 | Role  | Username | Password |
 |-------|----------|----------|
@@ -166,7 +166,7 @@ GMpromoters/
 | Agent | john_agent | agent123 |
 | Staff | jane_staff | staff123 |
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 Create a `.env` file (already included with defaults):
 
@@ -195,7 +195,7 @@ ADMIN_PASSWORD=admin123
 ADMIN_EMAIL=admin@gmpromoters.com
 ```
 
-## 🗄️ Database Schema
+## Database Schema
 
 ### Tables
 
@@ -214,14 +214,7 @@ ADMIN_EMAIL=admin@gmpromoters.com
 - Transaction → Land, Customer, Agent
 - Land → Customer (purchased by)
 
-## 📱 Responsive Design
-
-The application is fully responsive and works on:
-- Desktop (1024px+)
-- Tablet (768px - 1023px)
-- Mobile (< 768px)
-
-## 🔒 Role Permissions
+## Role Permissions
 
 | Feature | Admin | Agent | Staff |
 |---------|-------|-------|-------|
@@ -234,36 +227,4 @@ The application is fully responsive and works on:
 | User Management | ✅ | ❌ | ❌ |
 | Activity Log | ✅ | ❌ | ❌ |
 | Export Data | ✅ | ✅ | ✅ |
-
-## 🧪 API Endpoints
-
-### Authentication
-- `POST /api/auth/login` - User login
-- `POST /api/auth/signup` - User registration
-- `POST /api/auth/logout` - Logout
-- `GET /api/auth/session` - Get current session
-
-### Lands
-- `GET /api/lands` - List lands
-- `GET /api/lands/:id` - Get land details
-- `POST /api/lands` - Create land
-- `PUT /api/lands/:id` - Update land
-- `DELETE /api/lands/:id` - Delete land
-- `POST /api/lands/:id/mark-sold` - Mark as sold
-- `POST /api/lands/:id/assign-agent` - Assign agent
-
-### Customers, Agents, Transactions
-Similar CRUD endpoints available for each resource.
-
-### Reports
-- `GET /api/reports/dashboard` - Dashboard stats
-- `GET /api/reports/monthly-sales` - Sales by month
-- `GET /api/reports/top-agents` - Top performers
-- `GET /api/reports/activity-log` - Activity log
-
-### Export
-- `GET /api/export/lands` - Export lands CSV
-- `GET /api/export/customers` - Export customers CSV
-- `GET /api/export/agents` - Export agents CSV
-- `GET /api/export/transactions` - Export transactions CSV
 
