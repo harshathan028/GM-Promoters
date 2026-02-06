@@ -266,10 +266,3 @@ Similar CRUD endpoints available for each resource.
 - `GET /api/export/agents` - Export agents CSV
 - `GET /api/export/transactions` - Export transactions CSV
 
-## 🤝 Support
-
-For issues or questions, please create an issue in the repository.
-
-## 📄 License
-
-MIT License - feel free to use for personal or commercial projects.
