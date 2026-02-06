@@ -2,7 +2,8 @@
 
 A comprehensive Land Promotion Company Database Management System built with Node.js, Express, and SQLite/PostgreSQL.
 
-![Dashboard Preview](docs/dashboard-preview.png)
+<img width="1140" height="714" alt="image" src="https://github.com/user-attachments/assets/6b7ade7e-0bd2-459a-9c4a-c65b2fe9e87e" />
+
 
 ## ✨ Features
 
